@@ -17,7 +17,6 @@
 		6A3AD8521FB29E180046B869 /* HFARKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AD8511FB29E180046B869 /* HFARKitTests.m */; };
 		6A3AD85D1FB29E180046B869 /* HFARKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AD85C1FB29E180046B869 /* HFARKitUITests.m */; };
 		6A6102521FB5412C00DA4ABA /* SCNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6102511FB5412C00DA4ABA /* SCNViewController.m */; };
-		6A6102551FB57A4D00DA4ABA /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6102541FB57A4D00DA4ABA /* DemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +56,6 @@
 		6A3AD85E1FB29E180046B869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A6102501FB5412C00DA4ABA /* SCNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCNViewController.h; sourceTree = "<group>"; };
 		6A6102511FB5412C00DA4ABA /* SCNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCNViewController.m; sourceTree = "<group>"; };
-		6A6102531FB57A4D00DA4ABA /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
-		6A6102541FB57A4D00DA4ABA /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +113,6 @@
 				6A3AD83C1FB29E180046B869 /* ViewController.m */,
 				6A6102501FB5412C00DA4ABA /* SCNViewController.h */,
 				6A6102511FB5412C00DA4ABA /* SCNViewController.m */,
-				6A6102531FB57A4D00DA4ABA /* DemoViewController.h */,
-				6A6102541FB57A4D00DA4ABA /* DemoViewController.m */,
 				6A3AD83E1FB29E180046B869 /* Main.storyboard */,
 				6A3AD8411FB29E180046B869 /* Assets.xcassets */,
 				6A3AD8431FB29E180046B869 /* LaunchScreen.storyboard */,
@@ -282,7 +277,6 @@
 				6A3AD83D1FB29E180046B869 /* ViewController.m in Sources */,
 				6A6102521FB5412C00DA4ABA /* SCNViewController.m in Sources */,
 				6A3AD8481FB29E180046B869 /* main.m in Sources */,
-				6A6102551FB57A4D00DA4ABA /* DemoViewController.m in Sources */,
 				6A3AD8381FB29E180046B869 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
