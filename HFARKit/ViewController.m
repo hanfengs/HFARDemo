@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SCNViewController.h"
 
 @interface ViewController () <ARSCNViewDelegate, ARSessionDelegate>
 
@@ -31,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor whiteColor];
 //    // Set the view's delegate
 //    self.sceneView.delegate = self;
 //
@@ -43,14 +45,22 @@
 //    // Set the scene to the view
 //    self.sceneView.scene = scene;
     
-    self.sceneView.session = self.arSession;
-    self.sceneView.automaticallyUpdatesLighting = YES;
-    self.sceneView.showsStatistics = NO;
-    self.sceneView.delegate = self;
+//    [self.view addSubview:self.sceneView];
     
-    [self initNodeWithRootView:self.sceneView];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(200, 200, 100, 40)];
+    [btn setTitle:@"AR" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(clickButton) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btn];
+    
 }
 
+- (void)clickButton{
+    SCNViewController *vc = [[SCNViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 - (void)initNodeWithRootView:(SCNView *) scnView{
     
     _sunNode = [[SCNNode alloc] init];
@@ -61,8 +71,8 @@
     
     ///Users/hanfeng/Desktop/demo/HFARKit/HFARKit/art.scnassets/sun-halo.png
     ///Users/hanfeng/Desktop/demo/HFARKit/HFARKit/art.scnassets/sun.jpg
-    _sunNode.geometry.firstMaterial.multiply.contents = @"art.scnassets/texture.png";
-    _sunNode.geometry.firstMaterial.diffuse.contents = @"art.scnassets/texture.png";
+    _sunNode.geometry.firstMaterial.multiply.contents = @"art.scnassets/ship.scn";
+    _sunNode.geometry.firstMaterial.diffuse.contents = @"art.scnassets/ship.scn";
     _sunNode.geometry.firstMaterial.multiply.intensity = 0.5;
     _sunNode.geometry.firstMaterial.lightingModelName = SCNLightingModelConstant;
     
@@ -76,6 +86,18 @@
 }
 #pragma mark-
 
+- (ARSCNView *)sceneView{
+    if (_sceneView == nil) {
+        _sceneView = [[ARSCNView alloc] initWithFrame:self.view.bounds];
+        _sceneView.session = self.arSession;
+        _sceneView.automaticallyUpdatesLighting = YES;
+        _sceneView.showsStatistics = YES;
+        _sceneView.delegate = self;
+        
+        [self initNodeWithRootView:_sceneView];
+    }
+    return _sceneView;
+}
 - (ARSession *)arSession{
     if (_arSession == nil) {
         _arSession = [[ARSession alloc] init];
@@ -107,7 +129,7 @@
 //    // Run the view's session
 //    [self.sceneView.session runWithConfiguration:configuration];
     
-    [self.arSession runWithConfiguration:self.arSessionConfiguration];
+//    [self.arSession runWithConfiguration:self.arSessionConfiguration];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
