@@ -10,7 +10,7 @@
 #import <SceneKit/SceneKit.h>
 #import <ARKit/ARKit.h>
 
-@interface SCNViewController ()
+@interface SCNViewController ()<ARSCNViewDelegate>
 
 //AR视图：展示3D界面
 @property(nonatomic,strong)ARSCNView *arSCNView;
@@ -39,7 +39,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];
+    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/lamp/lamp.scn"];
     //art.scnassets/model2/model2.scn
     //art.scnassets/Pikachu/PikachuF_ColladaMax.DAE
     //art.scnassets/ship.scn
@@ -76,6 +76,35 @@
         _arSessionConfiguration.lightEstimationEnabled = YES;
     }
     return _arSessionConfiguration;
+}
+
+#pragma mark - ARSCNViewDelegate
+
+
+// Override to create and configure nodes for anchors added to the view's session.
+- (SCNNode *)renderer:(id<SCNSceneRenderer>)renderer nodeForAnchor:(ARAnchor *)anchor {
+    
+    SCNNode *node = [SCNNode new];
+    
+    // Add geometry to the node...
+    
+    return node;
+}
+
+
+- (void)session:(ARSession *)session didFailWithError:(NSError *)error {
+    // Present an error message to the user
+    
+}
+
+- (void)sessionWasInterrupted:(ARSession *)session {
+    // Inform the user that the session has been interrupted, for example, by presenting an overlay
+    
+}
+
+- (void)sessionInterruptionEnded:(ARSession *)session {
+    // Reset tracking and/or remove existing anchors if consistent tracking is required
+    
 }
 
 @end

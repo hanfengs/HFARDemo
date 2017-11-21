@@ -146,7 +146,7 @@
 
 #pragma mark - ARSCNViewDelegate
 
-/*
+
 // Override to create and configure nodes for anchors added to the view's session.
 - (SCNNode *)renderer:(id<SCNSceneRenderer>)renderer nodeForAnchor:(ARAnchor *)anchor {
     SCNNode *node = [SCNNode new];
@@ -155,7 +155,7 @@
  
     return node;
 }
-*/
+
 
 - (void)session:(ARSession *)session didFailWithError:(NSError *)error {
     // Present an error message to the user
