@@ -9,6 +9,7 @@
 #import "SCNViewController.h"
 #import <SceneKit/SceneKit.h>
 #import <ARKit/ARKit.h>
+#import "SettingViewController.h"
 
 @interface SCNViewController ()<ARSCNViewDelegate>
 
@@ -34,6 +35,13 @@
     [super viewWillAppear:animated];
     
     [self.view addSubview:self.arSCNView];
+    
+    UIButton *btn = [[UIButton alloc] init];
+    btn.frame = CGRectMake(0, 20, 40, 40);
+    [self.view addSubview:btn];
+    [btn setImage:[UIImage imageNamed:@"settings_icon"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(showSetting:) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.arSession runWithConfiguration:self.arSessionConfiguration];
 }
 
@@ -57,13 +65,30 @@
     [self.arSCNView.scene.rootNode addChildNode:node];    
 }
 
+#pragma mark- action
+- (void)showSetting:(UIButton *)sender{
+    
+    SettingViewController *settingsViewController = [SettingViewController new];
+    settingsViewController.popoverPresentationController.sourceView = sender;
+    settingsViewController.popoverPresentationController.sourceRect = sender.bounds;
+    
+    settingsViewController.preferredContentSize = CGSizeMake(self.view.frame.size.width - 100,
+                                                             self.view.frame.size.height - 200);
+    settingsViewController.modalPresentationStyle = UIModalPresentationPopover;
+    
+    settingsViewController.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    
+    [self presentViewController:settingsViewController animated:YES completion:nil];
+}
 
 #pragma mark-
 - (ARSCNView *)arSCNView{
     if (_arSCNView == nil) {
         _arSCNView = [[ARSCNView alloc] initWithFrame:self.view.bounds];
         _arSCNView.session = self.arSession;
-        
+        _arSCNView.delegate = self;
+        _arSCNView.showsStatistics = YES;
+        _arSCNView.automaticallyUpdatesLighting = YES;
     }
     return _arSCNView;
 }

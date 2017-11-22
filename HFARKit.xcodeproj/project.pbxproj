@@ -17,6 +17,8 @@
 		6A3AD8521FB29E180046B869 /* HFARKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AD8511FB29E180046B869 /* HFARKitTests.m */; };
 		6A3AD85D1FB29E180046B869 /* HFARKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3AD85C1FB29E180046B869 /* HFARKitUITests.m */; };
 		6A6102521FB5412C00DA4ABA /* SCNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6102511FB5412C00DA4ABA /* SCNViewController.m */; };
+		6A9A88611FC51A07002CD813 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A885F1FC51A07002CD813 /* SettingViewController.m */; };
+		6A9A88621FC51A07002CD813 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A9A88601FC51A07002CD813 /* SettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		6A3AD85E1FB29E180046B869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A6102501FB5412C00DA4ABA /* SCNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCNViewController.h; sourceTree = "<group>"; };
 		6A6102511FB5412C00DA4ABA /* SCNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCNViewController.m; sourceTree = "<group>"; };
+		6A9A885E1FC51A07002CD813 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		6A9A885F1FC51A07002CD813 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		6A9A88601FC51A07002CD813 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 				6A3AD83C1FB29E180046B869 /* ViewController.m */,
 				6A6102501FB5412C00DA4ABA /* SCNViewController.h */,
 				6A6102511FB5412C00DA4ABA /* SCNViewController.m */,
+				6A9A885E1FC51A07002CD813 /* SettingViewController.h */,
+				6A9A885F1FC51A07002CD813 /* SettingViewController.m */,
+				6A9A88601FC51A07002CD813 /* SettingViewController.xib */,
 				6A3AD83E1FB29E180046B869 /* Main.storyboard */,
 				6A3AD8411FB29E180046B869 /* Assets.xcassets */,
 				6A3AD8431FB29E180046B869 /* LaunchScreen.storyboard */,
@@ -247,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A3AD83A1FB29E180046B869 /* art.scnassets in Resources */,
+				6A9A88621FC51A07002CD813 /* SettingViewController.xib in Resources */,
 				6A3AD8451FB29E180046B869 /* LaunchScreen.storyboard in Resources */,
 				6A3AD8421FB29E180046B869 /* Assets.xcassets in Resources */,
 				6A3AD8401FB29E180046B869 /* Main.storyboard in Resources */,
@@ -278,6 +287,7 @@
 				6A6102521FB5412C00DA4ABA /* SCNViewController.m in Sources */,
 				6A3AD8481FB29E180046B869 /* main.m in Sources */,
 				6A3AD8381FB29E180046B869 /* AppDelegate.m in Sources */,
+				6A9A88611FC51A07002CD813 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
