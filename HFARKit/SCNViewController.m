@@ -37,12 +37,19 @@
     [self.arSession runWithConfiguration:self.arSessionConfiguration];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self.arSCNView.session pause];
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/lamp/lamp.scn"];
-    //art.scnassets/model2/model2.scn
+    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/house/model.dae"];
+    //art.scnassets/model/model.scn
     //art.scnassets/Pikachu/PikachuF_ColladaMax.DAE
     //art.scnassets/ship.scn
+    //art.scnassets/tv_scene.scn
     
     SCNNode *node = scene.rootNode.childNodes[0];
     node.position = SCNVector3Make(0, -1, -1);
